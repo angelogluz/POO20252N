@@ -1,7 +1,7 @@
 import { Util } from "./Util";
 
-export class Personagem{
-    nome: string ;
+export class Personagem {
+    nome: string;
     classe: string;
     raca: string;
     nivel: number;
@@ -12,7 +12,7 @@ export class Personagem{
     vidaMaxima: number;
     poderAtaque: number;
 
-    constructor(nome: string){
+    constructor(nome: string) {
         this.nome = nome;
         this.classe = "";
         this.raca = "";
@@ -25,7 +25,11 @@ export class Personagem{
         this.poderAtaque = 0;
     }
     treinarPoderAtaque(): void {
-        const incrementoDoTreino: number = Util.gerarNumeroAleatoria(5,15);
+        const incrementoDoTreino: number = Util.gerarNumeroAleatoria(5, 15);
         this.poderAtaque += incrementoDoTreino + this.poderAtaque * 1.1;
+    }
+
+    estaVivo() {
+        return (this.vidaAtual > 0) 
     }
 }
